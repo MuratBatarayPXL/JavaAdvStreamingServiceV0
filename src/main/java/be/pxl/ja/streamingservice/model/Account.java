@@ -1,5 +1,6 @@
 package be.pxl.ja.streamingservice.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,10 +12,10 @@ public class Account {
     private List<Profile> profiles;
 
     public Account(String email, String password){
+        profiles = new ArrayList<>();
         this.email = email;
         this.password = password;
-        Profile profile = new Profile("profile1");
-        profiles = new ArrayList<>();
+        Profile profile = new Profile("profile1", LocalDate.of(2005, 1, 1));
         profiles.add(profile);
     }
 
@@ -35,10 +36,7 @@ public class Account {
     }
 
     public boolean verifyPassword(String password){
-        if (password.equals(this.password)){
-            return true;
-        }
-        return false;
+        return password.equals(this.password);
     }
 
     public void setPaymentInfo(PaymentInfo paymentInfo) {
