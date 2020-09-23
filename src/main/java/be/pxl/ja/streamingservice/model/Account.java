@@ -35,7 +35,10 @@ public class Account {
     }
 
     public boolean verifyPassword(String password){
-        return true;
+        if (password.equals(this.password)){
+            return true;
+        }
+        return false;
     }
 
     public void setPaymentInfo(PaymentInfo paymentInfo) {
