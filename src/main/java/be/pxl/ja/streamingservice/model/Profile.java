@@ -36,9 +36,9 @@ public class Profile {
         return Period.between(LocalDate.now(), dateOfBirth).getYears();
     }
 
-    public boolean allowedToWatch(Movie movie){
+    public boolean allowedToWatch(Content content){
         if (dateOfBirth == null) {
-            return false;
-        } else return this.getAge() >= movie.getMaturityRating().getMinimumAge();
+            return true;
+        } else return this.getAge() >= content.getMaturityRating().getMinimumAge();
     }
 }

@@ -43,7 +43,7 @@ public class MainController implements Initializable {
 		int row = 0;
 		int col = 0;
 		for (Content content: streamingService.getContentList()) {
-			if (currentProfile.allowedToWatch((Movie) content)) {
+			if (currentProfile.allowedToWatch(content)) {
 				Image image = new Image("streamingservice/images/" + content.getImageUrl());
 				ImageView contentImage = new ImageView(image);
 				contentImage.setFitHeight(200.0);
