@@ -2,6 +2,7 @@ package be.pxl.ja.streamingservice.controller;
 
 import be.pxl.ja.streamingservice.model.Account;
 import be.pxl.ja.streamingservice.model.Content;
+import be.pxl.ja.streamingservice.model.Movie;
 import be.pxl.ja.streamingservice.model.Profile;
 import be.pxl.ja.streamingservice.StreamingService;
 import be.pxl.ja.streamingservice.StreamingServiceFactory;
@@ -42,7 +43,7 @@ public class MainController implements Initializable {
 		int row = 0;
 		int col = 0;
 		for (Content content: streamingService.getContentList()) {
-			if (currentProfile.allowedToWatch(content)) {
+			if (currentProfile.allowedToWatch((Movie) content)) {
 				Image image = new Image("streamingservice/images/" + content.getImageUrl());
 				ImageView contentImage = new ImageView(image);
 				contentImage.setFitHeight(200.0);

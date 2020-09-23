@@ -10,10 +10,10 @@ public class PasswordUtil {
 			strength = 0;
 		} else {
 			if (password.length() > 10){
-				strength = 3;
+				strength = 2;
 			}
 			else {
-				strength = 2;
+				strength = 1;
 			}
 			if (stringChecker("0123456789", password)){
 				strength += 2;

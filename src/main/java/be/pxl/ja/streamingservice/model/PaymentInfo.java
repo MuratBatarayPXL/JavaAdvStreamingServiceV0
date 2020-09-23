@@ -10,15 +10,6 @@ public class PaymentInfo {
     private LocalDate expirationDate;
     private int securityCode;
 
-    public PaymentInfo(String cardNumber, CreditCardType type, String firstName, String lastName, LocalDate expirationDate, int securityCode) {
-        this.cardNumber = cardNumber;
-        this.type = type;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.expirationDate = expirationDate;
-        this.securityCode = securityCode;
-    }
-
     public String getCardNumber() {
         return cardNumber;
     }
