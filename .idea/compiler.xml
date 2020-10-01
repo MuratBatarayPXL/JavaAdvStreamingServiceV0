@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="JavaAdvStreamingServiceV0" />
         <module name="StreamingServiceV0" />
       </profile>
     </annotationProcessing>

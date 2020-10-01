@@ -33,13 +33,13 @@ public class Profile {
     }
 
     public int getAge(){
-        return Period.between(dateOfBirth, LocalDate.now()).getYears();
+        if (dateOfBirth == null) {
+            return 0;
+        } else return Period.between(dateOfBirth, LocalDate.now()).getYears();
     }
 
     public boolean allowedToWatch(Content content){
-        if (dateOfBirth == null) {
-            return true;
-        } else return this.getAge() >= content.getMaturityRating().getMinimumAge();
+        return this.getAge() >= content.getMaturityRating().getMinimumAge();
 
     }
 }
